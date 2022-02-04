@@ -1,0 +1,283 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+%
+\usepackage{setspace}
+\usepackage{gensymb}
+%\doublespacing
+\singlespacing
+
+%\usepackage{graphicx}
+%\usepackage{amssymb}
+%\usepackage{relsize}
+\usepackage[cmex10]{amsmath}
+%\usepackage{amsthm}
+%\interdisplaylinepenalty=2500
+%\savesymbol{iint}
+%\usepackage{txfonts}
+%\restoresymbol{TXF}{iint}
+%\usepackage{wasysym}
+\usepackage{amsthm}
+%\usepackage{iithtlc}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+%\usepackage{xtab}
+\usepackage{longtable}
+\usepackage{multirow}
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+%\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+%\usepackage{stmaryrd}
+\usepackage{tkz-euclide} % loads  TikZ and tkz-base
+%\usetkzobj{all}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+  %optionally (for landscape tables embedded in another document): %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+%\usepackage{enumerate}
+\usepackage{circuitikz}
+\usepackage{karnaugh-map}
+\usetikzlibrary{calc}
+%\usepackage{wasysym}
+%\newcounter{MYtempeqncnt}
+\DeclareMathOperator*{\Res}{Res}
+%\renewcommand{\baselinestretch}{2}
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+%\lstset{
+%language=tex,
+%frame=single, 
+%breaklines=true
+%}
+
+\begin{document}
+%
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+%\newtheorem{thm}{Theorem}[section] 
+%\newtheorem{defn}[thm]{Definition}
+%\newtheorem{algorithm}{Algorithm}[section]
+%\newtheorem{cor}{Corollary}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+%\bibliographystyle{ieeetr}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+%\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+%\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+%\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+%\renewcommand{\thefigure}{\theproblem.\arabic{figure}}
+\renewcommand{\thefigure}{\theproblem}
+%\setlist[enumerate,1]{before=\renewcommand\theequation{\theenumi.\arabic{equation}}
+%\counterwithin{equation}{enumi}
+%\renewcommand{\theequation}{\arabic{subsection}.\arabic{equation}}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{
+%	\logo{
+Assignment 1
+%	}
+}
+\author{ Jagadeesh Kunuru}	
+% make the title area
+\maketitle
+\newpage
+%\tableofcontents
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+%\renewcommand{\theequation}{\theenumi}
+%Download the codes from
+%\begin{lstlisting}
+%$https://github.com/satyam463/FPGALAB/tree/main/Assignment1
+%\end{lstlisting}
+\section{Problem Statement}
+\subsection{Icse/Cs/2019Q5c}
+
+Using a truth table, state whether the following proposition is a Tautology, Contradiction or Contingency:
+
+\begin{center}
+       $\neg  ( P \Rightarrow Q ) \iff (\neg P \cup  Q)$
+\end{center}
+\section{Solution}
+By drawing a truth table, we get to know whether the following proposition is Tautology, Contradiction or Contingency:
+
+\vspace{15pt}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|} 
+ \hline
+ $P & Q$ & $\neg P$ & $P \Rightarrow Q$ & $\neg (P \Rightarrow Q )$ &  $(\neg P \cup Q)$ & $\neg (P \Rightarrow Q )$ \iff  $(\neg P \cup Q)$ \\ 
+ T & T & F & T & F & T & F \\ 
+ T & F & F & F & T & F & F \\ 
+ F & T & T & T & F & T & F \\
+ F & F & T & T & F & T & F \\
+ \hline
+\end{tabular}
+\end{center}
+
+\vspace{15pt}
+\begin{center}
+ Therefore, the given proposition is a Contradiction.
+
+\vspace{15pt}
+
+{\large Writing the Proposition in Boolean expression: }
+
+\vspace{15pt}
+
+K-Map for $\neg (P \Rightarrow Q )$
+
+\vspace{15pt}
+
+\begin{karnaugh-map}[2][2][1][$Q$][$P$]
+        \minterms{2}
+        \maxterms{0,1,3}
+        %\implicant{1}{1}
+        \implicant{2}{2}
+    \end{karnaugh-map}
+    
+\vspace{10pt}
+
+from K-Map
+       $\neg (P \Rightarrow Q ) = P{Q}^{'}$
+       
+\vspace{50pt}
+\begin{center}
+K-Map for $(\neg P \cup Q)$
+
+\vspace{15pt}
+
+    
+\begin{karnaugh-map}[2][2][1][$Q$][$P$]
+        \minterms{0,1,3}
+        \maxterms{2}
+        \implicant{0}{1}
+        \implicant{1}{3}
+    \end{karnaugh-map}
+
+\vspace{5pt}
+
+from K-Map
+       $(\neg P \cup Q) = {P}^{'}+Q$
+\end{center}
+
+\vspace{100pt}
+
+Now, the proposition $\neg (P \Rightarrow Q )$ \iff  $(\neg P \cup Q)$  can written be as $P{Q}^{'}$\cap ${P}^{'}+Q$
+
+Truth table for the Boolean expression:
+\vspace{15pt}
+\begin{center}
+\begin{tabular}{|c|c|c|} 
+ \hline
+ $P{Q}^{'}$ & ${P}^{'}+Q$ & $P{Q}^{'}$\cap ${P}^{'}+Q$\\ 
+ 0 & 1 & 0\\ 
+ 1 & 0 & 0\\ 
+ 0 & 1 & 0\\
+ 0 & 1 & 0 \\
+ \hline
+\end{tabular}
+\end{center}
+\vspace{15pt}
+$P{Q}^{'}{.}\brak{{P}^{'}+Q} = P{P}^{'}{Q}^{'}+{P}^{'}{Q}^{'}Q$ 
+can be drawn as:\\
+\vspace{15pt}
+\begin{tikzpicture}
+% Circuit style
+\ctikzset{
+    logic ports=ieee
+}
+% Logic ports
+\node[nand port](NANDa) at (-1.5,0){};
+\node[nand port](NANDb) at (-1.5,-1.5){};
+\node[nand port](NANDc) at (1,-1){};
+ \draw (NANDa.out) -| (NANDc.in 1);
+\draw (NANDb.out) -| (NANDc.in 2);
+\draw (NANDa.in 1) -- ++(-1.5,0)node[left](P){P};
+\draw (NANDa.in 2) -- ++(-1.5,0)node[left]($P^{'}$){$P^{'}$};
+\draw (NANDa.in 3) -- ++(-1.5,0)node[left]($Q^{'}$){$Q^{'}$};
+
+\draw (NANDb.in 1) -- ++(-1.5,-1.5)node[left]($P^{'}$){$P^{'}$};
+\draw (NANDb.in 2) -- ++(-1.5,-1.5)node[left]($Q^{'}$){$Q^{'}$};
+\draw (NANDb.in 3) -- ++(-1.5,-1.5)node[left](Q){Q};
+\draw (NANDc.out) -- ++(1,-1) node[near end,above]{F};
+\end{tikzpicture}
+\end{center}
+\end{document}
